@@ -1,0 +1,11 @@
+When there is extra space in a window managed by grid, it allocates that extra space to rows and columns that have a non-zero "weight". 
+To get your rows and columns to expand, give them a non-zero weight.
+
+for row in range(7):
+    window.grid_rowconfigure(row, weight=1)
+for col in range(3):
+    window.grid_columnconfigure(col, weight=1)
+    
+Of course, adjust that to whatever number of rows and columns you're actually using. 
+You can give different weights to cause some rows or columns to grow more than others. 
+For example, a column with a weight of 3 will grow 3 times faster than a column with a weight of 1.
